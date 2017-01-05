@@ -1,23 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
-
-
-//Containers
-import App from '../../ui/containers/app';
-//Pages
-import Home from '../../ui/pages/home';
-
-
-const routes = (
-    <Router history={browserHistory}>
-      <Route path="/" component={App}>
-          <IndexRoute component={Home}/>
-          {/*<Route path="something" component={Soon} />*/}
-      </Route>
-    </Router>
-);
-
 
 Meteor.startup(() => {
 
@@ -48,6 +30,5 @@ Meteor.startup(() => {
     s.parentNode.insertBefore(wf, s);
   })();
 
-  ReactDOM.render(routes, document.getElementById('app'));
 
 });

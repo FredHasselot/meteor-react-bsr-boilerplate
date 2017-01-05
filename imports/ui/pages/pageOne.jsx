@@ -16,7 +16,7 @@ let variables;
 // -------------------------------
 // -------------------------------
 
-class Home extends Component {
+class PageOne extends Component {
 
   constructor(props) {
     super(props);
@@ -37,30 +37,14 @@ class Home extends Component {
     console.log('mounted');
   }
 
-
   componentWillUnmount() {
     console.log('will unmount');
   }
-
 
   getDangerousHTML(htmlTag) {
     return {__html: htmlTag };
   }
 
-
-  clearAllTimeout() {
-    let id = window.setTimeout(function() {}, 0);
-    while (id--) {
-        window.clearTimeout(id);
-    }
-  }
-
-  clearAllInterval() {
-    let id = window.setInterval(function() {}, 0);
-    while (id--) {
-        window.clearInterval(id);
-    }
-  }
 
 
   // -------------------------------
@@ -70,8 +54,8 @@ class Home extends Component {
   render(props) {
     return (
       <div>
-        Homepage
-        <Link to="page-one"> goToPageOne </Link>
+        This is the page one
+        <Link to="/"> goToHome </Link>
       </div>
     );
   } // FIN RENDER
@@ -90,4 +74,4 @@ export default createContainer((props) => {
     // currentUser: Meteor.user()
   };
 
-}, Home);
+}, PageOne);
