@@ -1,0 +1,28 @@
+@import 'variables';
+
+.route-default-appear {
+  opacity: 0.01;
+}
+
+.route-default-appear.route-default-appear-active {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
+
+.route-default-enter {
+  opacity: 0.01;
+}
+
+.route-default-enter.route-default-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.route-default-leave {
+  opacity: 1;
+}
+
+.route-default-leave.route-default-leave-active {
+  opacity: 0.01;
+  transition: opacity 500ms ease-in;
+}
