@@ -34,7 +34,7 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    console.log('mounted');
+    console.log('mounted', this.props.homevar);
   }
 
 
@@ -71,7 +71,7 @@ class Home extends Component {
     return (
       <div>
         Homepage
-        <Link to="page-one"> goToPageOne </Link>
+        <Link to="post/1"> goToPageOne with post params 1 </Link>
       </div>
     );
   } // FIN RENDER

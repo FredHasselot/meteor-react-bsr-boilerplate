@@ -34,7 +34,7 @@ class PageOne extends Component {
   }
 
   componentDidMount() {
-    console.log('mounted');
+    console.log('mounted', this.props.paramsFromRouter.params.id);
   }
 
   componentWillUnmount() {
@@ -54,7 +54,7 @@ class PageOne extends Component {
   render(props) {
     return (
       <div>
-        This is the page one
+        This is the page one and the params is {this.props.paramsFromRouter.params.id}
         <Link to="/"> goToHome </Link>
       </div>
     );

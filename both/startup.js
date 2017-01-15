@@ -13,8 +13,8 @@ import PageOne from '../imports/ui/pages/pageOne';
 const routes = (
     <Router history={browserHistory}>
       <Route path="/" component={App}>
-          <IndexRoute component={Home}/>
-          <Route path="page-one" component={PageOne} />
+          <IndexRoute component={() => (<Home homevar="this is the homepage" />)} />
+          <Route path="post/:id" component={(params) => (<PageOne paramsFromRouter={params} />)} />
       </Route>
     </Router>
 );
@@ -25,7 +25,6 @@ Meteor.startup(() => {
   props: {
       onUpdate() {
         // ga('send', 'pageview');
-          console.log('page');
         },
       }
   }, {
