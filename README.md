@@ -4,9 +4,8 @@
 1. Clone repository && cd repository
 2. meteor update --all-packages
 3. meteor npm install
-4. meteor npm install --save babel-runtime
-5. rm -rf .git
-6. git init
-7. touch settings.json
-8. meteor --settings settings.json
-9. Enjoy 
+4. rm -rf .git
+5. git init
+6. touch settings.json
+7. meteor --settings settings.json
+8. Enjoy 
