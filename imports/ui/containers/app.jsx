@@ -30,6 +30,7 @@ export default (props) => {
                           {"property": "og:image", "content": "https://www.nasa.gov/sites/default/files/styles/image_card_4x3_ratio/public/thumbnails/image/leisa_christmas_false_color.png?itok=Jxf0IlS4"},
                           {"property": "og:url", "content": "http://www.google.fr" },
                           {"property": "og:title", "content": "Meteor boilderPLate" },
+                          {"name": "fragment", "content": "!"}
                       ]}
                 link={[
                     {"rel": "shortcut icon", "href": "images/favicon-new.png"},
