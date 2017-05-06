@@ -7,7 +7,6 @@ import Animate from 'rc-animate';
 import ReactHelmet from 'react-helmet';
 import ReactCookie from 'react-cookie';
 
-
 let animeName = "route-default"
 
 export default (props) => {
