@@ -1,57 +1,30 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import { Meteor } from 'meteor/meteor';
-import { createContainer } from 'meteor/react-meteor-data';
-import { Mongo } from 'meteor/mongo';
-import { Router, Route, IndexRoute, browserHistory, Link } from 'react-router';
-
+import { Link } from 'react-router';
 // -------------------------------
-// -------------------------------
-// -------------------------------
-
-// Variables
-let variables;
-
-// -------------------------------
-// -------------------------------
-// -------------------------------
-
 class PageOne extends Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      error:null
-        }
-  }
-
-  // -------------------------------
-  // -------------------------------
-  // -------------------------------
-
-  componentDidUpdate() {
-    console.log('did update');
-  }
-
+// ****************************************************************************
+// ----------------------------------------------------------------------------
+//                              LIFE CYCLE
+// ----------------------------------------------------------------------------
   componentDidMount() {
     console.log('mounted', this.props.paramsFromRouter.params.id);
   }
-
+  componentDidUpdate() {
+    console.log('did update');
+  }
   componentWillUnmount() {
     console.log('will unmount');
   }
-
+// ---------------------------------------------------------------------------
+//                              FUNCTIONS
+// ---------------------------------------------------------------------------
   getDangerousHTML(htmlTag) {
-    return {__html: htmlTag };
+    return { __html: htmlTag };
   }
-
-
-
-  // -------------------------------
-  // -------------------------------
-  // -------------------------------
-
-  render(props) {
+// ----------------------------------------------------------------------------
+//                               RENDER
+// ----------------------------------------------------------------------------
+  render() {
     return (
       <div>
         This is the page one and the params is {this.props.paramsFromRouter.params.id}
@@ -59,19 +32,10 @@ class PageOne extends Component {
       </div>
     );
   } // FIN RENDER
-
 } // FIN CLASS
 
 // -------------------------------
 // -------------------------------
 // -------------------------------
 
-export default createContainer((props) => {
-
-    // Meteor.subscribe('collectionName', limit, sortBy);
-
-  return {
-    // currentUser: Meteor.user()
-  };
-
-}, PageOne);
+export default PageOne;

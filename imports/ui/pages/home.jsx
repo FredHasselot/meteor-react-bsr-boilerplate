@@ -1,73 +1,52 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import { Meteor } from 'meteor/meteor';
-import { createContainer } from 'meteor/react-meteor-data';
-import { Mongo } from 'meteor/mongo';
-import { Router, Route, IndexRoute, browserHistory, Link } from 'react-router';
-
-// -------------------------------
-// -------------------------------
-// -------------------------------
-
-// Variables
-let variables;
+// import { withTracker } from 'meteor/react-meteor-data';
+import { Link } from 'react-router';
 
 // -------------------------------
 // -------------------------------
 // -------------------------------
 
 class Home extends Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      error:null
-        }
-  }
-
-  // -------------------------------
-  // -------------------------------
-  // -------------------------------
-
-  componentDidUpdate() {
-    console.log('did update');
-  }
-
+  state = {
+    errors: []
+   };
+// ****************************************************************************
+// ----------------------------------------------------------------------------
+//                              LIFE CYCLE
+// ----------------------------------------------------------------------------
   componentDidMount() {
     console.log('mounted', this.props.homevar);
   }
-
-
+  componentDidUpdate() {
+    console.log('did update');
+  }
   componentWillUnmount() {
     console.log('will unmount');
   }
-
-
+// ---------------------------------------------------------------------------
+//                              FUNCTIONS
+// ---------------------------------------------------------------------------
   getDangerousHTML(htmlTag) {
-    return {__html: htmlTag };
+    return { __html: htmlTag };
   }
-
-
-  clearAllTimeout() {
-    let id = window.setTimeout(function() {}, 0);
-    while (id--) {
-        window.clearTimeout(id);
-    }
+// ----------------------------------------------------------------------------
+clearAllTimeout() {
+  let id = window.setTimeout(() => {}, 0);
+  while (id--) {
+      window.clearTimeout(id);
   }
-
-  clearAllInterval() {
-    let id = window.setInterval(function() {}, 0);
-    while (id--) {
-        window.clearInterval(id);
-    }
+}
+// ----------------------------------------------------------------------------
+clearAllInterval() {
+  let id = window.setInterval(() => {}, 0);
+  while (id--) {
+      window.clearInterval(id);
   }
-
-
-  // -------------------------------
-  // -------------------------------
-  // -------------------------------
-
-  render(props) {
+}
+// ----------------------------------------------------------------------------
+//                               RENDER
+// ----------------------------------------------------------------------------
+  render() {
     return (
       <div>
         Homepage
@@ -75,19 +54,14 @@ class Home extends Component {
       </div>
     );
   } // FIN RENDER
-
 } // FIN CLASS
-
-// -------------------------------
-// -------------------------------
-// -------------------------------
-
-export default createContainer((props) => {
-
-    // Meteor.subscribe('collectionName', limit, sortBy);
-
-  return {
-    // currentUser: Meteor.user()
-  };
-
-}, Home);
+// ----------------------------------------------------------------------------
+//                               export
+// ----------------------------------------------------------------------------
+export default Home;
+// export default withTracker(() => {
+//      Meteor.subscribe('collectionName', limit, sortBy);
+//   return {
+//     currentUser: Meteor.user()
+//   };
+// })(Home);

@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { Meteor } from 'meteor/meteor';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import { ReactRouterSSR } from 'meteor/reactrouter:react-router-ssr';
 
@@ -30,11 +30,16 @@ Meteor.startup(() => {
   }, {
       htmlHook(html) {
         const head = ReactHelmet.rewind();
-        return html.replace('<head>', '<head>' + head.title + head.base + head.meta + head.link + head.script);
+        return html.replace('<head>', `<head>
+          ${head.title}
+          ${head.base}
+          ${head.meta}
+          ${head.link}
+          ${head.script}`);
       },
-      preRender: function(req, res) {
+      preRender: (req, res) => {
         ReactCookie.plugToRequest(req, res);
       }
     }
-  )
+  );
 });

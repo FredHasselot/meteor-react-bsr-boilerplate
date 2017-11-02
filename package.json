@@ -19,5 +19,13 @@
     "react-helmet": "^5.0.3",
     "react-mounter": "^1.2.0",
     "react-router": "^3.0.5"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.0.1",
+    "eslint": "^4.10.0",
+    "eslint-config-rallycoding": "^3.2.0",
+    "eslint-import-resolver-meteor": "^0.4.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-meteor": "^4.1.4"
   }
 }
